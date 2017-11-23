@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+    <script type="text/javascript">
+        function substitute(){
+            var myValue = document.getElementById('myTextBox').value;
+            
+            if (myValue.length == 0){
+                alert('Please enter a real value in the text box!');
+                return;
+            }
+            var myTitle = document.getElementById('title');
+            myTitle.innerHTML = myValue;
+        }
+        
+        
+        window.onload=function(){
+            document.getElementById("regButton").style.display='none';
+
+        }
+        
+        function showButton(){
+            if (reg1.checked && reg2.checked){
+                document.getElementById("regButton").style.display='block';
+            }else{
+                document.getElementById("regButton").style.display='none';
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h1 id="title">JavaScript Example</h1>
+    
+    <input type="text" id="myTextBox" />
+    
+    <input type="checkbox" id="reg1" name="check1" onchange="showButton()" />
+    <label for="reg1">1 동의하십니까?</label>
+    <input type="checkbox" id="reg2" name="check2" onchange="showButton()" />
+    <label for="reg2">2 동의하십니까?</label>
+    
+    <input type="submit" id="regButton" value="NEXT" onclick="substitute()" />
+    <p>모두 동의하시면 다음 버튼이 나옵니다. </p>
+    
+     
+    
+</body>
+</html>
